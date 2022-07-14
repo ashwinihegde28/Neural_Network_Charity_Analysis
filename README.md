@@ -35,17 +35,35 @@ The EIN and NAME columns will not increase the accuracy of the model hence remov
 In the optimized model, layer 1 started with 120 neurons with a relu activation.  For layer 2, it dropped to 80 neurons and continued with the relu activation.  From there, the sigmoid activation seemed to be the better fit for layers 3 (40 neurons) and layer 4 (20 neurons).    <br>
 
 ![Optimisation1](https://github.com/ashwinihegde28/Neural_Network_Charity_Analysis/blob/main/Challenge/Resources/Optimisation1.PNG)   <br>
+![Optimisation1](https://github.com/ashwinihegde28/Neural_Network_Charity_Analysis/blob/main/Challenge/Resources/Optimisation1Accuracy.PNG)   <br>
+
 
 5. Were you able to achieve the target model performance?   
 The target for the model was 75%, but the best the model could produce was 72.8%.
 
 6. What steps did you take to try and increase model performance?   
-Columns were reviewed and the STATUS and SPECIAL_CONSIDERATIONS columns were dropped as well as increasing the number of neurons and layers.  Other activations were tried such as tanh, but the range that model produced went from 40% to 68% accuracy.  The linear activation produced the worst accuracy, around 28%.  The relu activation at the early layers and sigmoid activation at the latter layers gave the best results.  <br>
+Columns were reviewed and few columns were dropped as well as increasing the number of neurons and layers.  Other activations were tried such as sigmoid,relu,linear  but the range that model produced max of 73% accuracy approximately.  The linear activation produced the loss around 0.5 comapred to others. The relu activation at the early layers and sigmoid activation at the latter layers gave the best results of 0.7287.  <br>
+1. First attempt:
+- Dropped the non-beneficial ID columns, 'EIN','NAME','STATUS','SPECIAL_CONSIDERATIONS'initially and looked at APPLICATION_TYPE and CLASSIFICATION value counts for binning.
+- Used 4 hidden layers and an outout layers with 110 units with relu activation, 80 units with relu activation, 40 units with sigmoid activation, 20 units with sigmoid activation and 1 output layer with single unit with liner activation respctively.
+- Achieved Loss: 0.553674042224884, Accuracy: 0.7258309125900269
+![optimisation2](https://github.com/ashwinihegde28/Neural_Network_Charity_Analysis/blob/main/Challenge/Resources/Optimisation1.PNG)  <br>
+![optimisation2](https://github.com/ashwinihegde28/Neural_Network_Charity_Analysis/blob/main/Challenge/Resources/Optimisation1Accuracy.PNG)  <br> 
 
-
+2. Second attempt:
+- Dropped the non-beneficial ID columns, 'EIN','NAME','STATUS','SPECIAL_CONSIDERATIONS' initially and looked at APPLICATION_TYPE value counts for binning.
+- Used 2 hidden layers and an outout layers with 100 units with relu activation, 50 units with relu activation and 1 unit with sigmoid activation respctively
+- Achieved Loss: 0.5783612132072449, Accuracy: 0.7259474992752075 (73%)
+![optimisation2](https://github.com/ashwinihegde28/Neural_Network_Charity_Analysis/blob/main/Challenge/Resources/optimisation2Layers.PNG)  <br>
 ![optimisation2](https://github.com/ashwinihegde28/Neural_Network_Charity_Analysis/blob/main/Challenge/Resources/optimisation2.PNG)  <br> 
 
-![optimisation3](https://github.com/ashwinihegde28/Neural_Network_Charity_Analysis/blob/main/Challenge/Resources/optimisation3.PNG) <br>
+3. Third attempt:
+- Dropped the non-beneficial ID columns, 'EIN','NAME' in the initial dataframe and looked for AFFILIATION and CLASSIFICATION value counts for binning.
+- Used 4 hidden layers and an outout layers with 125 units with relu activation, 50 units with relu activation, 40 units with sigmoid activation, 20 units with sigmoid activation and a single neuron with sigmoid activation respctively.
+- Achieved accuracy: Loss: 0.5672652125358582, Accuracy: 0.72874635457992555 (73%)
+![optimisation3](https://github.com/ashwinihegde28/Neural_Network_Charity_Analysis/blob/main/Challenge/Resources/optimisation3Layers.PNG) <br>
+![optimisation2](https://github.com/ashwinihegde28/Neural_Network_Charity_Analysis/blob/main/Challenge/Resources/optimisation2.PNG)  <br>
+
 
 
 
