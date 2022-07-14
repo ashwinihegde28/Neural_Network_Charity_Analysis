@@ -20,13 +20,13 @@ The files for the Challenge work can found in [Challenge Folder](https://github.
 ## Results:
 ### Data Preprocessing
 1. What variable(s) are considered the target(s) for your model?    
-Checking to see if the target is marked as successful in the DataFrame, indicating that it has been successfully funded by AlphabetSoup.  
+The IS_SUCCESSFUL column.  
 
 2. What variable(s) are considered to be the features for your model?    
 The IS_SUCCESSFUL column is the feature chosen for this dataset.
 
 3. What variable(s) are neither targets nor features, and should be removed from the input data?    
-The EIN and NAME columns will not increase the accuracy of the model and can be removed to improve code efficiency. <br>
+The EIN and NAME columns will not increase the accuracy of the model hence removed to improve code efficiency. <br>
 
 ![Deliverable1](https://github.com/ashwinihegde28/Neural_Network_Charity_Analysis/blob/main/Challenge/Resources/Deliverable1.PNG)<br>
 
@@ -41,7 +41,10 @@ The target for the model was 75%, but the best the model could produce was 72.8%
 
 6. What steps did you take to try and increase model performance?   
 Columns were reviewed and the STATUS and SPECIAL_CONSIDERATIONS columns were dropped as well as increasing the number of neurons and layers.  Other activations were tried such as tanh, but the range that model produced went from 40% to 68% accuracy.  The linear activation produced the worst accuracy, around 28%.  The relu activation at the early layers and sigmoid activation at the latter layers gave the best results.  <br>
+
+
 ![optimisation2](https://github.com/ashwinihegde28/Neural_Network_Charity_Analysis/blob/main/Challenge/Resources/optimisation2.PNG)  <br> 
+
 ![optimisation3](https://github.com/ashwinihegde28/Neural_Network_Charity_Analysis/blob/main/Challenge/Resources/optimisation3.PNG) <br>
 
 
